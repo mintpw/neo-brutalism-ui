@@ -1,0 +1,8 @@
+VersionInfo.ts
+node_modules
+yarn.lock
+coverage
+dist
+compiled
+build
+out
