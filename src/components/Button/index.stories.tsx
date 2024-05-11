@@ -38,6 +38,7 @@ export const Outline: Story = {
     variant: 'outline',
     children: 'Button',
     size: 'md',
+    disabled: false,
   },
 }
 
@@ -46,5 +47,6 @@ export const Text: Story = {
     variant: 'text',
     children: 'Button',
     size: 'md',
+    disabled: false,
   },
 }
