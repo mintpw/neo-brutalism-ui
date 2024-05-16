@@ -28,7 +28,7 @@ const button = tv({
     {
       variant: 'text',
       disabled: true,
-      class: 'bg-transparent text-gray-500', // You can also use "className"
+      class: 'bg-transparent text-gray-500',
     },
   ],
 })
