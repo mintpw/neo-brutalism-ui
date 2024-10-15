@@ -14,9 +14,6 @@ const dialog = tv({
     disabled: {
       true: 'opacity-50 bg-gray-500 pointer-events-none',
     },
-    rounded: {
-      true: 'rounded-full',
-    },
     size: {
       sm: 'px-4 py-2 text-sm',
       md: 'px-4 py-2 text-base',
@@ -25,30 +22,42 @@ const dialog = tv({
   },
 })
 
-type InputProps = ComponentProps<'dialog'> & VariantProps<typeof dialog>
+type DialogVariants = ComponentProps<'dialog'> & VariantProps<typeof dialog>
 
-export const Dialog = forwardRef<HTMLDialogElement, InputProps>((props: InputProps, ref) => {
+interface DialogProps extends DialogVariants {
+  dialogButton?: string
+  title?: string
+  description?: string
+  closeButton?: string
+}
+
+export const Dialog = forwardRef<HTMLDialogElement, DialogProps>((props: DialogProps, ref) => {
+  const {
+    dialogButton = 'Open Modal',
+    title = 'Hello',
+    description = 'Press ESC key or click the button below to close',
+    closeButton = 'Close',
+  } = props
+
   const handleClick = () => {
-    console.log('handleClick')
-    if (!document) {
-      return
-    }
-    if (document.getElementById('my_modal_1')) {
-      document.getElementById('my_modal_1').showModal()
-    }
+    const modal = document?.getElementById('my_modal_1') as HTMLDialogElement | null
+    modal?.showModal()
   }
+
   return (
     <>
       <Button variant="filled" onClick={handleClick}>
-        open modal
+        {dialogButton}
       </Button>
-      <dialog id="my_modal_1" className="modal">
+      <dialog id="my_modal_1" className="modal" ref={ref}>
         <div className={dialog()}>
-          <h3 className="text-lg font-bold">Hello!</h3>
-          <p className="py-4">Press ESC key or click the button below to close</p>
+          <h3 className="text-lg font-bold">{title}</h3>
+          <p className="py-4">{description}</p>
           <div className="modal-action">
             <form method="dialog">
-              <Button variant="filled">Close</Button>
+              <Button variant="filled" disabled={props.disabled}>
+                {closeButton}
+              </Button>
             </form>
           </div>
         </div>

@@ -26,9 +26,6 @@ type Story = StoryObj<typeof meta>
 
 export const Text: Story = {
   args: {
-    // type: 'text',
-    // placeholder: 'Insert text here',
     disabled: false,
-    rounded: true,
   },
 }
