@@ -2,7 +2,7 @@ import { ComponentProps, forwardRef } from 'react'
 import { tv, VariantProps } from 'tailwind-variants'
 
 const button = tv({
-  base: 'font-semibold py-1 px-4 rounded-full active:opacity-80',
+  base: 'font-semibold py-1 px-4 rounded-full active:opacity-80 focus:outline-none',
   variants: {
     variant: {
       filled:
