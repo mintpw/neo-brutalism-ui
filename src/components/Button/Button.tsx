@@ -39,6 +39,8 @@ interface ButtonProps extends ButtonVariants {
   children: React.ReactNode
 }
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref) => {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref) => {
   return <button ref={ref} className={button(props)} {...props} />
 })
+
+export default Button

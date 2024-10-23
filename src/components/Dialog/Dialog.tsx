@@ -1,6 +1,6 @@
 import { ComponentProps, forwardRef } from 'react'
 import { VariantProps, tv } from 'tailwind-variants'
-import { Button } from '../Button'
+import Button from '../Button'
 
 const dialog = tv({
   base: 'modal-box border-4 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)]',
@@ -31,7 +31,7 @@ interface DialogProps extends DialogVariants {
   closeButton?: string
 }
 
-export const Dialog = forwardRef<HTMLDialogElement, DialogProps>((props: DialogProps, ref) => {
+const Dialog = forwardRef<HTMLDialogElement, DialogProps>((props: DialogProps, ref) => {
   const {
     dialogButton = 'Open Modal',
     title = 'Hello',
@@ -65,3 +65,5 @@ export const Dialog = forwardRef<HTMLDialogElement, DialogProps>((props: DialogP
     </>
   )
 })
+
+export default Dialog

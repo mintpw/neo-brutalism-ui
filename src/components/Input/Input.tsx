@@ -26,6 +26,8 @@ const input = tv({
 
 type InputProps = ComponentProps<'input'> & VariantProps<typeof input>
 
-export const Input = forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref) => {
+const Input = forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref) => {
   return <input ref={ref} type="text" autoComplete="off" className={input(props)} {...props} />
 })
+
+export default Input

@@ -37,24 +37,24 @@ interface DropdownProps extends VariantProps<typeof dropdown> {
 
 const { button, menu } = dropdown()
 
-export const Dropdown = forwardRef<HTMLButtonElement, DropdownProps>(
-  (props: DropdownProps, ref) => {
-    return (
-      <>
-        <details className="dropdown">
-          <summary className={button(props)} ref={ref} {...props}>
-            {props.title}
-          </summary>
+const Dropdown = forwardRef<HTMLButtonElement, DropdownProps>((props: DropdownProps, ref) => {
+  return (
+    <>
+      <details className="dropdown">
+        <summary className={button(props)} ref={ref} {...props}>
+          {props.title}
+        </summary>
 
-          <ul className={menu(props)} {...props}>
-            {props.children.map((child, index) => (
-              <li key={index}>
-                <a>{child}</a>
-              </li>
-            ))}
-          </ul>
-        </details>
-      </>
-    )
-  }
-)
+        <ul className={menu(props)} {...props}>
+          {props.children.map((child, index) => (
+            <li key={index}>
+              <a>{child}</a>
+            </li>
+          ))}
+        </ul>
+      </details>
+    </>
+  )
+})
+
+export default Dropdown
