@@ -5,9 +5,9 @@ const input = tv({
   base: 'border-black border-2 shadow-[2px_2px_0px_rgba(0,0,0,1)] w-full py-2 px-3 text-gray-700 mb-3 focus:outline-none',
   variants: {
     variant: {
-      text: 'bg-blue-lagoon-500 focus:bg-blue-lagoon-400',
-      password: 'bg-transparent hover:bg-blue-lagoon-400',
-      number: 'hover:text-blue-lagoon-500',
+      text: 'bg-primary-500 focus:bg-primary-400',
+      password: 'bg-transparent hover:bg-primary-400',
+      number: 'hover:text-primary-500',
       date: '',
     },
     disabled: {

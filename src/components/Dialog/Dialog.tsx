@@ -6,9 +6,9 @@ const dialog = tv({
   base: 'modal-box border-4 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)]',
   variants: {
     variant: {
-      text: 'bg-blue-lagoon-500 focus:bg-blue-lagoon-400',
-      password: 'bg-transparent hover:bg-blue-lagoon-400',
-      number: 'hover:text-blue-lagoon-500',
+      text: 'bg-primary-500 focus:bg-primary-400',
+      password: 'bg-transparent hover:bg-primary-400',
+      number: 'hover:text-primary-500',
       date: '',
     },
     disabled: {

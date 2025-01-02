@@ -4,8 +4,8 @@ import { tv, VariantProps } from 'tailwind-variants'
 const dropdown = tv({
   slots: {
     button:
-      'btn hover:border-black bg-blue-lagoon-500 p-2 hover:bg-blue-lagoon-400 border-black border-2 shadow-[2px_2px_0px_rgba(0,0,0,1)]',
-    menu: 'menu dropdown-content z-[1] border-2 border-black bg-blue-lagoon-500 shadow-[2px_2px_0px_rgba(0,0,0,1)] hover:bg-blue-lagoon-400 w-52',
+      'btn hover:border-black bg-primary-500 p-2 hover:bg-primary-400 border-black border-2 shadow-[2px_2px_0px_rgba(0,0,0,1)]',
+    menu: 'menu dropdown-content z-[1] border-2 border-black bg-primary-500 shadow-[2px_2px_0px_rgba(0,0,0,1)] hover:bg-primary-400 w-52',
   },
   variants: {
     variant: {
